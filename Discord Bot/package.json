@@ -1,0 +1,19 @@
+{
+  "name": "dww",
+  "version": "0.0.1",
+  "description": "WereWolf Game in Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheoZerbibi/DWW.git"
+  },
+  "author": "TheZerbibi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheoZerbibi/DWW/issues"
+  },
+  "homepage": "https://github.com/TheoZerbibi/DWW#readme"
+}
