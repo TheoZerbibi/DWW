@@ -51,6 +51,27 @@ client.on('message', message =>
 
 	try
 	{
+		if (!message.guild.roles.find("name", "Maitre du Jeux"))
+		{
+			message.delete(100);
+			message.guild.createRole({
+				name: 'Maitre du Jeux',
+				color: '#818386',
+				permissions:
+				[
+					'SEND_MESSAGES',
+					'MANAGE_MESSAGES'
+				]
+		})
+
+		message.channel.send("**Il semble que c'est la premiere fois que vous faisait appel a moi !\n\n```\n- Le role 'Maitre du Jeux' a bien était créé.\n- Inialisation des donnée effectué.\n\nTous les systèmes sont opérationnels```\n\nJ'ai bien était initialiser, merci de refaire la commande !**")
+			.then(message => {
+				client.user.lastMessage.delete(20000);
+			})
+			.catch(error => console.log(error));
+		return ;
+		}
+
 		let commandFile = require(`./commands/${command}.js`);
 		fileExists(`./commands/${command}.js`).then(exists =>
 		{
