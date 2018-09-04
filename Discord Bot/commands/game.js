@@ -3,6 +3,8 @@ const config = require('../ressources/bot/config.json')
 
 exports.run = (client, message, args) => 
 {
+	const ft_games = require(`../cores/functions/ft_games`)
+	let channel	= message.channel.id;
 	if (!message.member.roles.find(r => ["Maitre du Jeux"].includes(r.name)))
 		{
 			message.delete(100);
@@ -13,6 +15,6 @@ exports.run = (client, message, args) =>
 				.catch(error => console.log(error));
 			return ;
 		}
-
-		
+		message.delete();
+		ft_games.confirm(message, channel, client, Discord);
 }
